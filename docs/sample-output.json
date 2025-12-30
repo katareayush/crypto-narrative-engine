@@ -1,0 +1,131 @@
+{
+  "health_endpoint": {
+    "endpoint": "GET /health",
+    "response": {
+      "status": "ok"
+    }
+  },
+  "narratives_endpoint": {
+    "endpoint": "GET /narratives",
+    "response": [
+      {
+        "id": 1,
+        "narrative_name": "Layer 2 Scaling",
+        "score": 2.17,
+        "confidence": "weak",
+        "why_now": "Weak signal: sustained discussion continuing, validated by both on-chain data and developer activity.",
+        "evidence": [
+          {
+            "url": "https://github.com/tryethernal/ethernal",
+            "source": "github"
+          },
+          {
+            "url": "https://dune.com/queries/6434209", 
+            "source": "dune"
+          },
+          {
+            "url": "https://github.com/Aneek2004/T3rn-Airdrop-bot",
+            "source": "github"
+          }
+        ],
+        "created_at": "2025-12-30T06:50:04.344Z"
+      }
+    ]
+  },
+  "narrative_detail_endpoint": {
+    "endpoint": "GET /narratives/1",
+    "response": {
+      "id": 1,
+      "narrative_name": "Layer 2 Scaling",
+      "score": 2.17,
+      "confidence": "weak", 
+      "why_now": "Weak signal: sustained discussion continuing, validated by both on-chain data and developer activity.",
+      "evidence": [
+        {
+          "url": "https://github.com/tryethernal/ethernal",
+          "source": "github"
+        },
+        {
+          "url": "https://dune.com/queries/6434209",
+          "source": "dune"
+        },
+        {
+          "url": "https://github.com/Aneek2004/T3rn-Airdrop-bot",
+          "source": "github"
+        }
+      ],
+      "created_at": "2025-12-30T06:50:04.344Z"
+    }
+  },
+  "ideas_endpoint": {
+    "endpoint": "GET /ideas",
+    "response": {
+      "total": 4,
+      "ideas": [
+        {
+          "idea_title": "L2 Cost Optimizer",
+          "one_liner": "Automatically routes transactions to the cheapest Layer 2 network.",
+          "target_user": "DeFi power users",
+          "core_user_flow": [
+            "Connect wallet",
+            "Simulate transaction across L2s", 
+            "Select optimal chain",
+            "Execute transaction"
+          ],
+          "minidev_template_hint": ["wallet-connect", "tx-simulator", "ui-kit"],
+          "narrative_name": "Layer 2 Scaling",
+          "narrative_confidence": "weak",
+          "narrative_score": 2.17,
+          "rank_score": 1.3,
+          "template_spec": {
+            "template_name": "l2costoptimizer",
+            "modules": ["wallet-connect", "web3-provider", "indexer", "rpc-client", "ui-kit", "react-components"],
+            "env_vars": ["WALLET_CONNECT_PROJECT_ID", "RPC_URL", "INDEXER_URL", "RPC_URL", "CHAIN_IDS"],
+            "routes": ["/", "/connect", "/simulate", "/execute"],
+            "data_models": ["User", "TransactionSimulation", "Transaction"]
+          }
+        }
+      ]
+    }
+  },
+  "idea_detail_endpoint": {
+    "endpoint": "GET /ideas/1", 
+    "response": {
+      "idea_title": "L2 Cost Optimizer",
+      "one_liner": "Automatically routes transactions to the cheapest Layer 2 network.",
+      "target_user": "DeFi power users",
+      "core_user_flow": [
+        "Connect wallet",
+        "Simulate transaction across L2s",
+        "Select optimal chain", 
+        "Execute transaction"
+      ],
+      "minidev_template_hint": ["wallet-connect", "tx-simulator", "ui-kit"],
+      "narrative_name": "Layer 2 Scaling",
+      "narrative_confidence": "weak",
+      "narrative_score": 2.17,
+      "rank_score": 1.3,
+      "template_spec": {
+        "template_name": "l2costoptimizer",
+        "modules": ["wallet-connect", "web3-provider", "indexer", "rpc-client", "ui-kit", "react-components"],
+        "env_vars": ["WALLET_CONNECT_PROJECT_ID", "RPC_URL", "INDEXER_URL", "CHAIN_IDS"],
+        "routes": ["/", "/connect", "/simulate", "/execute"],
+        "data_models": ["User", "TransactionSimulation", "Transaction"]
+      }
+    }
+  },
+  "jobs_status_endpoint": {
+    "endpoint": "GET /jobs/status",
+    "response": {
+      "status": "active",
+      "jobs": {
+        "farcaster": { "lastRun": "2025-12-30T07:10:00.000Z", "status": "idle" },
+        "rss": { "lastRun": "2025-12-30T06:45:00.000Z", "status": "idle" },
+        "github": { "lastRun": "2025-12-30T06:55:00.000Z", "status": "idle" },
+        "dune": { "lastRun": "2025-12-30T06:00:00.000Z", "status": "idle" },
+        "narratives": { "lastRun": "2025-12-30T07:00:00.000Z", "status": "idle" },
+        "cleanup": { "lastRun": "2025-12-30T02:00:00.000Z", "status": "idle" }
+      }
+    }
+  }
+}

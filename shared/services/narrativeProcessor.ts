@@ -1,8 +1,53 @@
-import { SOURCE_WEIGHTS } from "../config/narratives.ts";
-import { detectNarrative } from "./narrativeDetection.ts";
-import { scoreNarrative } from "./narrativeDetection.ts";
+import { db } from '../db/client.ts';
+import { signals, narratives } from '../db/schema.ts';
+import { gte, desc } from 'drizzle-orm';
+import { detectNarrative, scoreNarrative } from "./narrativeDetection.ts";
 import { calculateMomentumBonus, getRecencyMultiplier, generateWhyNow } from "./narrativeScoring.ts";
+import { SOURCE_WEIGHTS } from "../config/narratives.ts";
 import type { ScoredSignal, ProcessedNarrative } from "../types/narrative.ts";
+
+export async function processNarratives(): Promise<void> {
+  
+  const cutoffDate = new Date(Date.now() - 48 * 60 * 60 * 1000);
+  
+  const recentSignals = await db
+    .select()
+    .from(signals)
+    .where(gte(signals.timestamp, cutoffDate))
+    .orderBy(desc(signals.timestamp))
+    .limit(1000);
+
+  if (recentSignals.length === 0) {
+    return;
+  }
+
+  
+  const processedNarratives = processSignalsIntoNarratives(recentSignals);
+  
+  // Save narratives to database
+  for (const narrative of processedNarratives) {
+    await db
+      .insert(narratives)
+      .values({
+        narrative_name: narrative.narrative_name,
+        score: narrative.score,
+        confidence: narrative.confidence,
+        why_now: narrative.why_now,
+        evidence: narrative.evidence as any
+      })
+      .onConflictDoUpdate({
+        target: narratives.narrative_name,
+        set: {
+          score: narrative.score,
+          confidence: narrative.confidence,
+          why_now: narrative.why_now,
+          evidence: narrative.evidence as any,
+          created_at: new Date()
+        }
+      });
+
+  }
+}
 
 export function processSignalsIntoNarratives(signals: any[]): ProcessedNarrative[] {
   const narrativeBuckets: Record<string, ScoredSignal[]> = {};
