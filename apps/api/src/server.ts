@@ -5,6 +5,7 @@ import narrativesRoute from './routes/narratives.js';
 import ideasRoute from './routes/ideas.js';
 import jobsRoute from './routes/jobs.js';
 import { startJobScheduler } from "../../../shared/services/jobScheduler.js";
+import { startHealthPoller } from "../../../shared/services/healthPoller.js";
 import { errorHandler, notFoundHandler, asyncHandler } from "../../../shared/middleware/errorHandler.js";
 import { apiLimiter, heavyLimiter, postLimiter } from "../../../shared/middleware/rateLimiter.js";
 import { cacheMiddleware } from "../../../shared/middleware/cache.js";
@@ -53,6 +54,7 @@ app.listen(PORT, async () => {
   // Start job scheduler after server is ready (but don't wait for it)
   setImmediate(() => {
     startJobScheduler();
+    startHealthPoller();
   });
   
   // Preload critical data for faster first requests
