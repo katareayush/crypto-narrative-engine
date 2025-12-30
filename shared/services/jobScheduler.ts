@@ -1,10 +1,10 @@
 import cron from 'node-cron';
 import fetch from 'node-fetch';
 import Parser from 'rss-parser';
-import { upsertSignal } from '../db/insertSignal.ts';
-import { processNarratives } from '../services/narrativeProcessor.ts';
-import { cleanupOldData } from '../db/dataCleanup.ts';
-import type { Signal } from '../types/signal.ts';
+import { upsertSignal } from '../db/insertSignal';
+import { processNarratives } from '../services/narrativeProcessor';
+import { cleanupOldData } from '../db/dataCleanup';
+import type { Signal } from '../types/signal';
 
 let isJobRunning = false;
 const jobStatus = {

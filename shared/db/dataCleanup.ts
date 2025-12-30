@@ -1,5 +1,5 @@
-import { db } from './client.ts';
-import { signals, narratives } from './schema.ts';
+import { db } from './client';
+import { signals, narratives } from './schema';
 import { lt, eq, desc, and } from 'drizzle-orm';
 
 const SIGNAL_RETENTION_DAYS = 7;

@@ -6,7 +6,7 @@ dotenv.config();
 const databaseUrl = new URL(process.env.DATABASE_URL!);
 
 export default {
-  schema: "./shared/db/schema.ts",
+  schema: "./shared/db/schema",
   out: "./shared/db/migrations",
   dialect: "postgresql",
   dbCredentials: {

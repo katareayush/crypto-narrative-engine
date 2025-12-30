@@ -1,8 +1,8 @@
 import fetch from "node-fetch";
 import fs from "fs";
 import path from "path";
-import { upsertSignal } from "../../shared/db/insertSignal.ts";
-import type { Signal } from "../../shared/types/signal.ts";
+import { upsertSignal } from "../../shared/db/insertSignal";
+import type { Signal } from "../../shared/types/signal";
 
 const DUNE_API_KEY = process.env.DUNE_API_KEY;
 if (!DUNE_API_KEY) {

@@ -1,6 +1,6 @@
-import { db } from "./client.ts";
-import { signals } from "./schema.ts";
-import type { Signal } from "../types/signal.ts";
+import { db } from "./client"
+import { signals } from "./schema";
+import type { Signal } from "../types/signal";
 
 export async function upsertSignal(signal: Signal) {
   await db

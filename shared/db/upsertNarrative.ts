@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
-import { db } from "./client.ts";
-import { narratives } from "./schema.ts";
+import { db } from "./client";
+import { narratives } from "./schema";
 
 export interface NarrativeData {
   narrative_name: string;

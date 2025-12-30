@@ -1,5 +1,5 @@
-import { db } from "./client.ts";
-import { signals } from "./schema.ts";
+import { db } from "./client";
+import { signals } from "./schema";
 
 async function run() {
   await db.insert(signals).values({

@@ -1,8 +1,8 @@
-import { db } from "../../shared/db/client.ts";
-import { signals } from "../../shared/db/schema.ts";
+import { db } from "../../shared/db/client";
+import { signals } from "../../shared/db/schema";
 import { desc, gt } from "drizzle-orm";
-import { processSignalsIntoNarratives } from "../../shared/services/narrativeProcessor.ts";
-import { upsertNarratives, type NarrativeData } from "../../shared/db/upsertNarrative.ts";
+import { processSignalsIntoNarratives } from "../../shared/services/narrativeProcessor";
+import { upsertNarratives, type NarrativeData } from "../../shared/db/upsertNarrative";
 
 const MAX_NARRATIVES_TO_PERSIST = 10;
 

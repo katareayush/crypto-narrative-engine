@@ -1,4 +1,4 @@
-import type { AppIdea } from "../../../../shared/types/appIdea.ts";
+import type { AppIdea } from "../../../../shared/types/appIdea";
 
 export interface AppPattern {
   pattern_id: string;

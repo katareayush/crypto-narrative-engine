@@ -1,10 +1,10 @@
-import { db } from '../db/client.ts';
-import { signals, narratives } from '../db/schema.ts';
-import { gte, desc } from 'drizzle-orm';
-import { detectNarrative, scoreNarrative } from "./narrativeDetection.ts";
-import { calculateMomentumBonus, getRecencyMultiplier, generateWhyNow } from "./narrativeScoring.ts";
-import { SOURCE_WEIGHTS } from "../config/narratives.ts";
-import type { ScoredSignal, ProcessedNarrative } from "../types/narrative.ts";
+import { db } from '../db/client'
+import { signals, narratives } from '../db/schema'
+import { gte, desc } from 'drizzle-orm'; 
+import { detectNarrative, scoreNarrative } from "./narrativeDetection";
+import { calculateMomentumBonus, getRecencyMultiplier, generateWhyNow } from "./narrativeScoring";
+import { SOURCE_WEIGHTS } from "../config/narratives";
+import type { ScoredSignal, ProcessedNarrative } from "../types/narrative";
 
 export async function processNarratives(): Promise<void> {
   

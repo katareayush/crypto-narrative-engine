@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
-import { upsertSignal } from "../../shared/db/insertSignal.ts";
-import type { Signal } from "../../shared/types/signal.ts";
+import { upsertSignal } from "../../shared/db/insertSignal";
+import type { Signal } from "../../shared/types/signal";
 
 const HUB_URL = "https://hub.pinata.cloud";
 

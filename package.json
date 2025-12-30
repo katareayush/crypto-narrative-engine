@@ -4,8 +4,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node apps/api/src/server.ts",
-    "dev": "ts-node apps/api/src/server.ts",
+    "start": "node dist/apps/api/src/server.js",
+    "dev": "ts-node --esm apps/api/src/server.ts",
     "build": "tsc",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
