@@ -1,5 +1,5 @@
-import { SCORING_CONFIG } from "../config/narratives";
-import type { ScoredSignal, NarrativeScore } from "../types/narrative";
+import { SCORING_CONFIG } from "../config/narratives.js";
+import type { ScoredSignal, NarrativeScore } from "../types/narrative.js";
 
 export function calculateMomentumBonus(signals: any[], timeWindow: number = 6): number {
   const now = Date.now();

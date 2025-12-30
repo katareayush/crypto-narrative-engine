@@ -1,10 +1,10 @@
-import { db } from '../db/client'
-import { signals, narratives } from '../db/schema'
+import { db } from '../db/client.js'
+import { signals, narratives } from '../db/schema.js'
 import { gte, desc } from 'drizzle-orm'; 
-import { detectNarrative, scoreNarrative } from "./narrativeDetection";
-import { calculateMomentumBonus, getRecencyMultiplier, generateWhyNow } from "./narrativeScoring";
-import { SOURCE_WEIGHTS } from "../config/narratives";
-import type { ScoredSignal, ProcessedNarrative } from "../types/narrative";
+import { detectNarrative, scoreNarrative } from "./narrativeDetection.js";
+import { calculateMomentumBonus, getRecencyMultiplier, generateWhyNow } from "./narrativeScoring.js";
+import { SOURCE_WEIGHTS } from "../config/narratives.js";
+import type { ScoredSignal, ProcessedNarrative } from "../types/narrative.js";
 
 export async function processNarratives(): Promise<void> {
   

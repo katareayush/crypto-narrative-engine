@@ -1,6 +1,6 @@
 import Parser from "rss-parser";
-import { upsertSignal } from "../../shared/db/insertSignal";
-import type { Signal } from "../../shared/types/signal";
+import { upsertSignal } from "../../shared/db/insertSignal.js";
+import type { Signal } from "../../shared/types/signal.js";
 
 const parser = new Parser({
   timeout: 10000,

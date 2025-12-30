@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
-import { upsertSignal } from "../../shared/db/insertSignal";
-import type { Signal } from "../../shared/types/signal";
+import { upsertSignal } from "../../shared/db/insertSignal.js";
+import type { Signal } from "../../shared/types/signal.js";
 
 const GITHUB_API = "https://api.github.com";
 

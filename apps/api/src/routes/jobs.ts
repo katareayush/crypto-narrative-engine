@@ -1,5 +1,5 @@
 import express from "express";
-import { getJobStatus } from "../../../../shared/services/jobScheduler";
+import { getJobStatus } from "../../../../shared/services/jobScheduler.js";
 
 const router = express.Router();
 

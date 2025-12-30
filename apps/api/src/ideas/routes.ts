@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { generateAllAppIdeas, getAppIdeaById } from "./service";
-import { validateLimit, validatePositiveInteger } from "../../../../shared/utils/validation";
+import { generateAllAppIdeas, getAppIdeaById } from "./service.js";
+import { validateLimit, validatePositiveInteger } from "../../../../shared/utils/validation.js";
 
 const router = Router();
 

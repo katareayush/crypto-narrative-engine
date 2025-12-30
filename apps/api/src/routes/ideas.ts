@@ -1,6 +1,6 @@
 import express from "express";
-import { generateAllAppIdeas, getAppIdeaById } from '../ideas/service';
-import { validateLimit, validatePositiveInteger } from "../../../../shared/utils/validation";
+import { generateAllAppIdeas, getAppIdeaById } from '../ideas/service.js';
+import { validateLimit, validatePositiveInteger } from "../../../../shared/utils/validation.js";
 
 const router = express.Router();
 

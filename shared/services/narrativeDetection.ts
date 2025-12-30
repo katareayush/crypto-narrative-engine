@@ -2,8 +2,8 @@ import {
   NARRATIVE_DEFINITIONS, 
   SCORING_CONFIG,
   CONFIDENCE_THRESHOLDS 
-} from "../config/narratives";
-import type { NarrativeMatch, ScoredSignal, NarrativeScore } from "../types/narrative";
+} from "../config/narratives.js";
+import type { NarrativeMatch, ScoredSignal, NarrativeScore } from "../types/narrative.js";
 
 export function detectNarrative(text: string): NarrativeMatch | null {
   const lower = text.toLowerCase();

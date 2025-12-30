@@ -1,4 +1,4 @@
-import type { AppIdea, TemplateSpec, AppIdeaWithTemplate } from "../../../../shared/types/appIdea";
+import type { AppIdea, TemplateSpec, AppIdeaWithTemplate } from "../../../../shared/types/appIdea.js";
 
 const MODULE_MAPPINGS: Record<string, string[]> = {
   "wallet-connect": ["wallet-connect", "web3-provider"],

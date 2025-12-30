@@ -1,8 +1,8 @@
 import { Router } from "express";
 import { eq, desc } from "drizzle-orm";
-import { db } from '../../../../shared/db/client';
-import { narratives } from "../../../../shared/db/schema";
-import { validateLimit, validatePositiveInteger } from "../../../../shared/utils/validation";
+import { db } from '../../../../shared/db/client.js';
+import { narratives } from "../../../../shared/db/schema.js";
+import { validateLimit, validatePositiveInteger } from "../../../../shared/utils/validation.js";
 
 const router = Router();
 

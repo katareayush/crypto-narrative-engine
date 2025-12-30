@@ -1,4 +1,4 @@
-import type { AppIdea } from "../../../../shared/types/appIdea";
+import type { AppIdea } from "../../../../shared/types/appIdea.js";
 
 export interface AppPattern {
   pattern_id: string;

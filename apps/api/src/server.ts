@@ -1,13 +1,13 @@
 import express from "express";
 import dotenv from "dotenv";
-import healthRoute from './routes/health';
-import narrativesRoute from './routes/narratives';
-import ideasRoute from './routes/ideas';
-import jobsRoute from './routes/jobs';
-import { startJobScheduler } from "../../../shared/services/jobScheduler";
-import { errorHandler, notFoundHandler, asyncHandler } from "../../../shared/middleware/errorHandler";
-import { apiLimiter, heavyLimiter, postLimiter } from "../../../shared/middleware/rateLimiter";
-import { cacheMiddleware } from "../../../shared/middleware/cache";
+import healthRoute from './routes/health.js';
+import narrativesRoute from './routes/narratives.js';
+import ideasRoute from './routes/ideas.js';
+import jobsRoute from './routes/jobs.js';
+import { startJobScheduler } from "../../../shared/services/jobScheduler.js";
+import { errorHandler, notFoundHandler, asyncHandler } from "../../../shared/middleware/errorHandler.js";
+import { apiLimiter, heavyLimiter, postLimiter } from "../../../shared/middleware/rateLimiter.js";
+import { cacheMiddleware } from "../../../shared/middleware/cache.js";
 
 dotenv.config();
 
@@ -46,7 +46,7 @@ app.listen(PORT, async () => {
   
   // Warm up database connection
   try {
-    const { db } = await import("../../../shared/db/client");
+    const { db } = await import("../../../shared/db/client.js");
   } catch (error) {
   }
   
@@ -58,7 +58,7 @@ app.listen(PORT, async () => {
   // Preload critical data for faster first requests
   setImmediate(async () => {
     try {
-      const { getTopNarratives } = await import("./ideas/service");
+      const { getTopNarratives } = await import("./ideas/service.js");
       await getTopNarratives(5);
     } catch (error) {
     }

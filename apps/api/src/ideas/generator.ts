@@ -1,6 +1,6 @@
-import type { ProcessedNarrative } from "../../../../shared/types/narrative";
-import type { RankedAppIdea } from "../../../../shared/types/appIdea";
-import { NARRATIVE_APP_PATTERNS, DEFAULT_PATTERNS } from "./patterns";
+import type { ProcessedNarrative } from "../../../../shared/types/narrative.js";
+import type { RankedAppIdea } from "../../../../shared/types/appIdea.js";
+import { NARRATIVE_APP_PATTERNS, DEFAULT_PATTERNS } from "./patterns.js";
 
 interface ConfidenceMultiplier {
   strong: number;

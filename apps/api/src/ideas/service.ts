@@ -1,10 +1,10 @@
-import { db } from "../../../../shared/db/client";
-import { narratives } from "../../../../shared/db/schema";
+import { db } from "../../../../shared/db/client.js";
+import { narratives } from "../../../../shared/db/schema.js";
 import { desc } from "drizzle-orm";
-import { generateAppIdeas } from "./generator";
-import { generateAppIdeaWithTemplate } from "./templates";
-import type { ProcessedNarrative } from "../../../../shared/types/narrative";
-import type { AppIdeaWithTemplate, RankedAppIdea } from "../../../../shared/types/appIdea";
+import { generateAppIdeas } from "./generator.js";
+import { generateAppIdeaWithTemplate } from "./templates.js";
+import type { ProcessedNarrative } from "../../../../shared/types/narrative.js";
+import type { AppIdeaWithTemplate, RankedAppIdea } from "../../../../shared/types/appIdea.js";
 
 export async function getTopNarratives(limit: number = 10): Promise<ProcessedNarrative[]> {
   const results = await db
